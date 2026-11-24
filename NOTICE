@@ -1,0 +1,40 @@
+# Aviso de terceros y datos
+
+## Código
+
+El código de Demeter se distribuye bajo la licencia MIT incluida en `LICENSE`.
+
+## Librerías
+
+| Componente | Versión | Licencia | Uso |
+|---|---|---|---|
+| Leaflet | 1.9.4 | BSD-2-Clause | Mapa interactivo |
+| GSAP | 3.x | GreenSock Standard License | Animaciones |
+| ScrollTrigger | 3.x | GreenSock Standard License | Animaciones ligadas al scroll |
+| Fraunces | variable | SIL Open Font License 1.1 | Tipografía display |
+| Public Sans | variable | SIL Open Font License 1.1 | Tipografía de interfaz |
+
+Las licencias completas de Leaflet, GSAP y las fuentes deben conservarse al redistribuir el proyecto. Las versiones vendorizadas están en `src/main/resources/static/vendor/` y `src/main/resources/static/fonts/`.
+
+Los encabezados de licencia de los archivos vendorizados se conservan aunque el código del proyecto no tenga comentarios. Son avisos legales, no documentación de implementación.
+
+## Datos
+
+El código no relicencia los datos de terceros.
+
+| Fuente | Uso | Condición |
+|---|---|---|
+| RNPDNO / Data Cívica, base anonimizada 2025 + abril 2026 | Registros municipales anonimizados | Sin licencia de reutilización explícita; revisar términos y base legal |
+| Data Cívica, nombres públicos | Búsqueda por nombre y entidad | Se carga localmente; no se empaqueta en el jar ni se publica |
+| A dónde van los Desaparecidos | Fosas por entidad y año 2006-2016 | Uso periodístico/cívico con atribución |
+| Plataforma Ciudadana de Fosas | Presencia municipal 2006-2024 | Sin licencia declarada; requiere autorización para producción |
+| INEGI | Límites y claves geográficas | Datos abiertos con atribución |
+| GeoNames | Coordenadas y población | CC BY 4.0 |
+| OpenStreetMap | Mapa base | ODbL y atribución |
+| Esri Topo | Relieve | Términos de Esri |
+
+Los registros sintéticos, si se activan, no representan personas reales.
+
+## Modelo
+
+M0, M1, M2, M3 y M4 se documentan en `docs/MODELOS_ML.md` y `docs/MATEMATICAS.md`. Los resultados no constituyen una predicción de fosas nuevas, una ubicación forense ni una acusación individual.

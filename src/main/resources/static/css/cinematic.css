@@ -1,0 +1,546 @@
+
+
+
+
+
+.cinematic-chapter {
+  position: relative;
+  isolation: isolate;
+  background:
+    linear-gradient(180deg, #07130d, #0a1710 55%, #07130d),
+    radial-gradient(ellipse at 50% 20%, rgba(70, 94, 67, 0.18), transparent 65%);
+}
+
+
+#modelos,
+#datos,
+#metodo {
+  background: transparent !important;
+  overflow: visible;
+}
+
+.cinematic-chapter .data-columns > div {
+  padding: 20px;
+}
+
+.cinematic-chapter .data-columns .not-list {
+  padding-left: 18px;
+}
+
+.cinematic-stage {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  margin-bottom: -100vh;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  background: #07130d;
+  transition: opacity 650ms ease, visibility 0s linear 650ms;
+}
+
+.cinematic-stage.is-active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 650ms ease;
+}
+
+.cinematic-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.cinematic-fog {
+  position: absolute;
+  z-index: 2;
+  width: 62%;
+  height: 38%;
+  border-radius: 50%;
+  opacity: 0.3;
+  will-change: transform, opacity;
+  background: radial-gradient(ellipse, rgba(196, 214, 188, 0.22), transparent 72%);
+}
+
+.cinematic-fog--one {
+  left: -14%;
+  bottom: 4%;
+  animation: cinematic-fog-one 28s ease-in-out infinite alternate;
+}
+
+.cinematic-fog--two {
+  right: -12%;
+  top: 14%;
+  background: radial-gradient(ellipse, rgba(211, 220, 191, 0.18), transparent 72%);
+  animation: cinematic-fog-two 36s ease-in-out infinite alternate;
+}
+
+.cinematic-fog--three {
+  left: 28%;
+  bottom: -8%;
+  width: 48%;
+  height: 30%;
+  opacity: 0.18;
+  background: radial-gradient(ellipse, rgba(238, 213, 172, 0.2), transparent 72%);
+  animation: cinematic-fog-three 32s ease-in-out infinite alternate;
+}
+
+.cinematic-light {
+  position: absolute;
+  z-index: 2;
+  top: -25%;
+  width: 22%;
+  height: 145%;
+  opacity: 0.5;
+  background: linear-gradient(90deg, transparent, rgba(246, 215, 161, 0.14), transparent);
+  transform-origin: top center;
+  will-change: transform, opacity;
+}
+
+.cinematic-light--one {
+  left: 48%;
+  transform: rotate(17deg);
+  animation: cinematic-light-one 20s ease-in-out infinite alternate;
+}
+
+.cinematic-light--two {
+  left: 75%;
+  width: 16%;
+  opacity: 0.24;
+  transform: rotate(26deg);
+  animation: cinematic-light-two 25s ease-in-out infinite alternate;
+}
+
+.cinematic-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background:
+    linear-gradient(90deg, rgba(3, 9, 6, 0.9) 0%, rgba(3, 9, 6, 0.76) 36%,
+      rgba(3, 9, 6, 0.34) 70%, rgba(3, 9, 6, 0.56) 100%),
+    linear-gradient(0deg, rgba(3, 9, 6, 0.42) 0%, transparent 45%);
+}
+
+.cinematic-stage.is-intimate .cinematic-fog--one {
+  opacity: 0.38;
+}
+
+.cinematic-stage.is-intimate .cinematic-veil {
+  background:
+    linear-gradient(90deg, rgba(3, 9, 6, 0.94) 0%, rgba(3, 9, 6, 0.76) 38%,
+      rgba(3, 9, 6, 0.5) 72%, rgba(3, 9, 6, 0.66) 100%),
+    linear-gradient(0deg, rgba(3, 9, 6, 0.56) 0%, transparent 48%);
+}
+
+.cinematic-stage.is-sanctuary .cinematic-veil {
+  background:
+    linear-gradient(90deg, rgba(3, 9, 6, 0.96) 0%, rgba(3, 9, 6, 0.82) 40%,
+      rgba(3, 9, 6, 0.48) 74%, rgba(3, 9, 6, 0.66) 100%),
+    linear-gradient(0deg, rgba(3, 9, 6, 0.56) 0%, transparent 50%);
+}
+
+
+.cinematic-chapter .section {
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  border-top-color: rgba(246, 239, 230, 0.18);
+}
+
+.cinematic-chapter .section__title {
+  color: #fbf6ee;
+  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.32);
+}
+
+.cinematic-chapter .section__title em {
+  color: #e7b87a;
+}
+
+.cinematic-chapter .section__lead {
+  color: #e8ddce;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.25);
+}
+
+.cinematic-chapter .section__index {
+  color: #e4b97f;
+}
+
+.cinematic-chapter .section__index::after {
+  background: #e4b97f;
+}
+
+.cinematic-chapter .model-card,
+.cinematic-chapter .panel-box,
+.cinematic-chapter .source-card,
+.cinematic-chapter .quality-item,
+.cinematic-chapter .step,
+.cinematic-chapter .callout,
+.cinematic-chapter .data-columns > div,
+.cinematic-chapter .table-wrap {
+  box-shadow: 0 18px 40px rgba(3, 8, 5, 0.16);
+}
+
+.cinematic-chapter .table-wrap {
+  background: var(--paper-raised);
+}
+
+.cinematic-chapter .data-table {
+  color: var(--ink-soft);
+}
+
+
+.cinematic-chapter .model-card,
+.cinematic-chapter .model-card.is-selected,
+.cinematic-chapter .panel-box,
+.cinematic-chapter .source-card,
+.cinematic-chapter .quality-item,
+.cinematic-chapter .step,
+.cinematic-chapter .callout,
+.cinematic-chapter .data-columns > div,
+.cinematic-chapter .table-wrap,
+.cinematic-chapter .security-list li {
+  background: #0a1510;
+  border: 1px solid rgba(246, 239, 230, 0.17);
+  box-shadow: none;
+  color: #f6efe6;
+}
+
+.cinematic-chapter .security-list {
+  background: transparent;
+  border-color: rgba(246, 239, 230, 0.17);
+}
+
+.cinematic-chapter .data-table th,
+.cinematic-chapter .data-table td {
+  background: #0a1510;
+}
+
+.cinematic-chapter .model-grid,
+.cinematic-chapter .source-grid,
+.cinematic-chapter .quality-grid,
+.cinematic-chapter .steps {
+  background: transparent;
+  border-color: rgba(246, 239, 230, 0.17);
+}
+
+.cinematic-chapter .model-card.is-selected {
+  border-color: rgba(231, 184, 122, 0.75);
+}
+
+.cinematic-chapter .model-card__name,
+.cinematic-chapter .model-card__metric-value,
+.cinematic-chapter .panel-box__title,
+.cinematic-chapter .source-card__name,
+.cinematic-chapter .quality-item__value,
+.cinematic-chapter .step__title,
+.cinematic-chapter .data-table td,
+.cinematic-chapter .importance__value {
+  color: #fbf6ee;
+}
+
+.cinematic-chapter .model-card__id,
+.cinematic-chapter .model-card__desc,
+.cinematic-chapter .model-card__metric-label,
+.cinematic-chapter .model-card__small dt,
+.cinematic-chapter .model-card__small dd,
+.cinematic-chapter .source-card__desc,
+.cinematic-chapter .source-card__meta,
+.cinematic-chapter .source-card__status,
+.cinematic-chapter .quality-item__label,
+.cinematic-chapter .step__text,
+.cinematic-chapter .not-list li,
+.cinematic-chapter .security-list li,
+.cinematic-chapter .importance__label {
+  color: #d3c2ad;
+}
+
+.cinematic-chapter .callout__label,
+.cinematic-chapter .section__index {
+  color: #e4b97f;
+}
+
+.cinematic-chapter .eyebrow {
+  color: #d8c4ab;
+}
+
+.cinematic-chapter .callout__text,
+.cinematic-chapter .callout--soft .callout__text,
+.cinematic-chapter .data-columns .section__lead,
+.cinematic-chapter .data-columns .not-list {
+  color: #e5dacb;
+  text-shadow: none;
+}
+
+.cinematic-chapter .data-table th {
+  background: #0a1510;
+  color: #cfb99f;
+  border-bottom-color: rgba(246, 239, 230, 0.17);
+}
+
+.cinematic-chapter .data-table td {
+  border-bottom-color: rgba(246, 239, 230, 0.14);
+}
+
+.cinematic-chapter .data-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.cinematic-chapter .table-wrap {
+  border-color: rgba(246, 239, 230, 0.17);
+}
+
+.cinematic-chapter .importance__track {
+  background: rgba(246, 239, 230, 0.16);
+}
+
+.cinematic-chapter .metric-strip {
+  background: transparent;
+  border-color: rgba(246, 239, 230, 0.17);
+}
+
+.cinematic-chapter .metric-strip__item {
+  background: #0a1510;
+  border: 1px solid rgba(246, 239, 230, 0.12);
+}
+
+.cinematic-chapter .metric-strip__value {
+  color: #fbf6ee;
+}
+
+.cinematic-chapter .metric-strip__label {
+  color: #d3c2ad;
+}
+
+.cinematic-chapter .cluster-row {
+  border-top-color: rgba(246, 239, 230, 0.17);
+}
+
+.cinematic-chapter .cluster-row__name {
+  color: #fbf6ee;
+}
+
+.cinematic-chapter .cluster-row__meta,
+.cinematic-chapter .cluster-row__desc {
+  color: #d3c2ad;
+}
+
+
+.cinematic-chapter .evidence-panel {
+  margin-top: 40px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(246, 239, 230, 0.18);
+}
+
+.cinematic-chapter .evidence-panel__head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(20px, 4vw, 56px);
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.cinematic-chapter .evidence-panel__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 2.7vw, 2.4rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fbf6ee;
+}
+
+.cinematic-chapter .evidence-panel__title em {
+  color: #e7b87a;
+  font-style: italic;
+}
+
+.cinematic-chapter .evidence-panel__note {
+  max-width: 64ch;
+  color: #d3c2ad;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.cinematic-chapter .evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: transparent;
+  border: 1px solid rgba(246, 239, 230, 0.17);
+}
+
+.cinematic-chapter .evidence-card {
+  background: #0a1510;
+  padding: 20px;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cinematic-chapter .evidence-card__value {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  line-height: 1;
+  color: #fbf6ee;
+  font-variant-numeric: tabular-nums;
+}
+
+.cinematic-chapter .evidence-card__label {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e4b97f;
+}
+
+.cinematic-chapter .evidence-card__text {
+  margin-top: 14px;
+  color: #d3c2ad;
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.cinematic-chapter .evidence-card__source {
+  margin-top: auto;
+  padding-top: 14px;
+  color: #bda98f;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border-top: 1px solid rgba(246, 239, 230, 0.12);
+}
+
+.cinematic-chapter .evidence-card__source:hover {
+  color: #f0d2a3;
+}
+
+.cinematic-chapter .legal-note {
+  margin-top: 28px;
+  padding: 20px;
+  background: #0a1510;
+  border: 1px solid rgba(246, 239, 230, 0.17);
+  border-left: 2px solid #e4b97f;
+}
+
+.cinematic-chapter .legal-note .callout__label {
+  margin-bottom: 10px;
+}
+
+.cinematic-chapter .legal-note__meta {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(246, 239, 230, 0.12);
+  color: #bda98f;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  line-height: 1.65;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 820px) {
+  .cinematic-chapter .evidence-panel__head,
+  .cinematic-chapter .evidence-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cinematic-chapter .importance__fill {
+  background: #c17a4b;
+}
+
+.cinematic-chapter .step__number {
+  color: #e4b97f;
+}
+
+.cinematic-chapter .step {
+  min-height: 190px;
+}
+
+.cinematic-chapter .quality-grid {
+  gap: 1px;
+}
+
+.cinematic-chapter .quality-item {
+  padding: 18px;
+}
+
+.cinematic-chapter .not-list li::before,
+.cinematic-chapter .security-list li::before {
+  background: #e4b97f;
+}
+
+.cinematic-chapter .model-card a,
+.cinematic-chapter .panel-box a,
+.cinematic-chapter .step a,
+.cinematic-chapter .data-columns a {
+  color: #e7b87a;
+}
+
+.cinematic-chapter .model-card__desc,
+.cinematic-chapter .source-card__desc,
+.cinematic-chapter .step__text {
+  line-height: 1.55;
+}
+
+.cinematic-chapter .section__inner {
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes cinematic-fog-one {
+  from { transform: translate3d(-3%, 2%, 0) scale(0.94); opacity: 0.17; }
+  to { transform: translate3d(8%, -4%, 0) scale(1.1); opacity: 0.32; }
+}
+
+@keyframes cinematic-fog-two {
+  from { transform: translate3d(2%, -2%, 0) scale(1); opacity: 0.22; }
+  to { transform: translate3d(-7%, 4%, 0) scale(1.12); opacity: 0.12; }
+}
+
+@keyframes cinematic-fog-three {
+  from { transform: translate3d(-2%, 0, 0); opacity: 0.12; }
+  to { transform: translate3d(6%, -5%, 0); opacity: 0.24; }
+}
+
+@keyframes cinematic-light-one {
+  from { transform: translateX(-2%) rotate(15deg); opacity: 0.26; }
+  to { transform: translateX(4%) rotate(22deg); opacity: 0.5; }
+}
+
+@keyframes cinematic-light-two {
+  from { transform: translateX(2%) rotate(24deg); opacity: 0.12; }
+  to { transform: translateX(-4%) rotate(29deg); opacity: 0.28; }
+}
+
+@media (max-width: 820px) {
+  .cinematic-veil,
+  .cinematic-stage.is-intimate .cinematic-veil,
+  .cinematic-stage.is-sanctuary .cinematic-veil {
+    background:
+      linear-gradient(90deg, rgba(3, 9, 6, 0.94) 0%, rgba(3, 9, 6, 0.8) 70%,
+        rgba(3, 9, 6, 0.52) 100%),
+      linear-gradient(0deg, rgba(3, 9, 6, 0.6) 0%, transparent 50%);
+  }
+
+  .cinematic-fog {
+    opacity: 0.18;
+  }
+
+  .cinematic-light--two {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cinematic-fog,
+  .cinematic-light {
+    animation: none !important;
+  }
+}

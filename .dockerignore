@@ -1,0 +1,17 @@
+target
+.git
+.github
+.idea
+.vscode
+node_modules
+docs
+sandbox
+data
+*.log
+*.zip
+.env
+.env.*
+
+videos
+*.mp4
+

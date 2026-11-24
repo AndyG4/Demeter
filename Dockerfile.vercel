@@ -1,0 +1,16 @@
+FROM maven:3.9.9-eclipse-temurin-21 AS build
+WORKDIR /workspace
+COPY pom.xml .
+COPY src ./src
+RUN mvn -B -q -Dmaven.test.skip=true package
+
+FROM eclipse-temurin:21-jre-jammy
+ENV PORT=80
+ENV TZ=America/Mexico_City
+ENV JAVA_TOOL_OPTIONS="-XX:MaxRAMPercentage=70 -XX:+UseSerialGC -Djava.awt.headless=true"
+WORKDIR /app
+RUN groupadd --system demeter && useradd --system --gid demeter --home-dir /app demeter
+COPY --from=build /workspace/target/demeter.jar /app/demeter.jar
+EXPOSE 80
+USER demeter
+ENTRYPOINT ["java", "-jar", "/app/demeter.jar"]

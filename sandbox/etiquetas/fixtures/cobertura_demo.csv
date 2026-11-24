@@ -1,0 +1,6 @@
+estado_id,year,coverage,source,source_url,notes
+01,2025,complete,Registro estatal sintético,https://example.gob.mx/fiscalia/registro-2025,Solo para probar el pipeline
+02,2026,complete,Registro estatal sintético,https://example.gob.mx/fiscalia/registro-2026,Solo para probar el pipeline
+03,2026,partial,Registro estatal sintético,https://example.gob.mx/fiscalia/registro-2026,Solo para probar el pipeline
+04,2025,partial,Registro estatal sintético,https://example.gob.mx/fiscalia/registro-2025,Solo para probar el pipeline
+05,2026,partial,Registro estatal sintético,https://example.gob.mx/fiscalia/registro-2026,Solo para probar el pipeline

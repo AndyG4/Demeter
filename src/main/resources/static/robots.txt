@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /$
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+Allow: /vendor/
+Disallow: /api/
