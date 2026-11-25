@@ -8,7 +8,6 @@ target/
 .env
 .env.*
 !.env.example
-data/registros_nombres.csv
 data/*.local
 node_modules/
 sandbox/etiquetas/out/

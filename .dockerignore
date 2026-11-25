@@ -6,7 +6,6 @@ target
 node_modules
 docs
 sandbox
-data
 *.log
 *.zip
 .env

@@ -25,7 +25,7 @@ El código no relicencia los datos de terceros.
 | Fuente | Uso | Condición |
 |---|---|---|
 | RNPDNO / Data Cívica, base anonimizada 2025 + abril 2026 | Registros municipales anonimizados | Sin licencia de reutilización explícita; revisar términos y base legal |
-| Data Cívica, nombres públicos | Búsqueda por nombre y entidad | Se carga localmente; no se empaqueta en el jar ni se publica |
+| Data Cívica, nombres públicos | Búsqueda por nombre y entidad | Se incluye en la imagen pública; el archivo queda descargable desde el repositorio |
 | A dónde van los Desaparecidos | Fosas por entidad y año 2006-2016 | Uso periodístico/cívico con atribución |
 | Plataforma Ciudadana de Fosas | Presencia municipal 2006-2024 | Sin licencia declarada; requiere autorización para producción |
 | INEGI | Límites y claves geográficas | Datos abiertos con atribución |

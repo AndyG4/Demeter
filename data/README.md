@@ -1,13 +1,15 @@
 # Directorio de datos externos
 
-Este directorio está vacío en el repositorio. El servicio lee, si existen:
+Este directorio incluye `registros_nombres.csv`, la capa pública de nombres de Data Cívica que usa el buscador. No se usa para los conteos del mapa ni para el modelo.
+
+El servicio también lee, si existen:
 
 - `registros.csv`
 - `manifest.json`
 
-Si no existen, carga la base real anonimizada incluida en el jar (`registros_reales.csv.gz`, 133,887 registros, CC0).
+Si no existen, carga la base real anonimizada incluida en el jar (`registros_combinados.csv.gz`, 137,583 registros).
 
-No commitees datos personales reales.
+No agregues datos personales no autorizados. La capa de nombres incluida es pública y se publica junto con el repositorio para que la búsqueda funcione en Vercel.
 
 ## manifest.json
 

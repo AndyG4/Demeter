@@ -10,7 +10,7 @@ Un registro no es una persona. Una fosa no es un cuerpo. Un conteo no es una ser
 |---|---|---|---|---|
 | RNPDNO, versión estadística | Definiciones, contexto, criterios de estatus | Agregados; 1952-hoy con cortes variables | Términos de gob.mx; sin descarga masiva; sin licencia de reutilización explícita | https://versionpublicarnpdno.segob.gob.mx/ |
 | RNPDNO · base 2025 + abril 2026 (Data Cívica, anonimizada) | Personas, sexo, edad, fecha, estatus, entidad y municipio | 137,583 personas únicas; corte 2026-04-30 | Pública, anonimizada, sin licencia de reutilización explícita | https://datacivica.org/a-quienes-nos-faltan-2026/los-otros-datos/ |
-| Data Cívica · nombres públicos | Búsqueda por nombre, entidad | 78,684 registros; sólo entidad | Pública, sin licencia de reutilización explícita; se carga localmente, no se empaqueta | https://volveradesaparecer.datacivica.org/datos-abiertos |
+| Data Cívica · nombres públicos | Búsqueda por nombre, entidad | 78,684 registros; sólo entidad | Pública, sin licencia de reutilización explícita; se incluye en la imagen pública | https://volveradesaparecer.datacivica.org/datos-abiertos |
 | A dónde van los Desaparecidos (Quinto Elemento Lab) | Fosas por entidad y año | 2006-2016; 1,957 fosas en filas válidas | Sin licencia explícita; uso periodístico/cívico con atribución | https://data.adondevanlosdesaparecidos.org/ |
 | Plataforma Ciudadana de Fosas (Artículo 19, Data Cívica, IBERO, PDH) | Presencia documentada por municipio | 2006-2024; 788 municipios | **Sin licencia declarada**; API pública. Para producción se requiere autorización | https://plataformaciudadanadefosas.org/ |
 | INEGI | Límites estatales, claves municipales | 32 entidades, 2,469 municipios | Datos abiertos INEGI; atribución | https://www.inegi.org.mx/ |
@@ -117,7 +117,7 @@ La instalación combina la **base 2025** con los **hechos nuevos de abril de 202
 
 El archivo está comprimido en `src/main/resources/data/registros_abril_2026.csv.gz` y se carga si no hay un `registros.csv` externo. El operador puede sustituirlo por un CSV autorizado con nombres; en ese caso la búsqueda por nombre se habilita.
 
-La búsqueda por nombre usa `data/registros_nombres.csv` (Data Cívica, 78,684 registros), que sólo publica entidad. No se empaqueta en el jar y no se mezcla con los conteos municipales.
+La búsqueda por nombre usa `data/registros_nombres.csv` (Data Cívica, 78,684 registros), que sólo publica entidad. Se incluye en la imagen pública para habilitar el buscador y no se mezcla con los conteos municipales.
 
 `DemoRecordsFactory` queda como respaldo de desarrollo si no hay ni base real ni archivo externo y `rastro.demo-enabled=true`.
 

@@ -132,7 +132,7 @@ La instancia incluye una **base pública anonimizada** de Data Cívica:
 
 La base municipal **no incluye nombres**. Es una decisión de privacidad: la versión publicada está anonimizada.
 
-Para la **búsqueda por nombre** se usa la versión pública de nombres de Data Cívica, cargada desde `data/registros_nombres.csv` (no se empaqueta en el jar). Son **78,684 registros** con nombre, edad, sexo, fecha y entidad; **no incluyen municipio**. El buscador muestra `Aproximada a la entidad` y `Sin municipio público`. La fuente permite solicitar retiro de un nombre.
+Para la **búsqueda por nombre** se usa la versión pública de nombres de Data Cívica, incluida en `data/registros_nombres.csv` y copiada a la imagen de Vercel. Son **78,684 registros** con nombre, edad, sexo, fecha y entidad; **no incluyen municipio**. El buscador muestra `Aproximada a la entidad` y `Sin municipio público`. La fuente permite solicitar retiro de un nombre.
 
 Para **nombre + municipio** hace falta un CSV autorizado. Coloca `registros.csv` y `manifest.json` en `data/` con `"synthetic": false`; el importador acepta `nombres` + apellidos, `fecha_desaparicion`, `municipio` + `entidad`, `situacion` y coordenadas opcionales. Cuando el conjunto tiene nombres y municipio, el buscador y el mapa municipal se enriquecen.
 
@@ -203,7 +203,7 @@ El conjunto es de tamaño acotado (137,583 personas únicas), se lee completo al
 | INEGI / GeoNames | Límites, claves y población aproximada | 32 entidades · 2,469 municipios |
 | Esri World Topo Map / OpenStreetMap | Relieve y estándar | Cobertura global |
 
-**Licencias y límites:** la base municipal de abril 2026 es la versión **anonimizada** que publica Data Cívica; no incluye nombres y no declara una licencia de reutilización explícita. La versión de nombres de Data Cívica es pública, tampoco tiene una licencia de reutilización explícita y se carga localmente, fuera del jar; incluye un mecanismo de retiro. La API de la Plataforma Ciudadana de Fosas no declara licencia explícita: se usa como etiqueta agregada de validación y para producción se debe solicitar autorización. El RNPDNO no ofrece descarga masiva y no se automatiza su captcha ni su puerta de términos. No se usan bases filtradas sin anonimizar; la base usada es la versión anonimizada publicada por Data Cívica. No se usan fichas personales de la SCJN. El mapa estándar usa OpenStreetMap con atribución; el relieve usa Esri Topo.
+**Licencias y límites:** la base municipal de abril 2026 es la versión **anonimizada** que publica Data Cívica; no incluye nombres y no declara una licencia de reutilización explícita. La versión de nombres de Data Cívica es pública, tampoco tiene una licencia de reutilización explícita y se incluye en la imagen pública para habilitar la búsqueda; incluye un mecanismo de retiro. La API de la Plataforma Ciudadana de Fosas no declara licencia explícita: se usa como etiqueta agregada de validación y para producción se debe solicitar autorización. El RNPDNO no ofrece descarga masiva y no se automatiza su captcha ni su puerta de términos. No se usan bases filtradas sin anonimizar; la base usada es la versión anonimizada publicada por Data Cívica. No se usan fichas personales de la SCJN. El mapa estándar usa OpenStreetMap con atribución; el relieve usa Esri Topo.
 
 Detalle: [`docs/DATOS.md`](docs/DATOS.md) y auditoría en [`docs/investigacion/FUENTES_DATOS.md`](docs/investigacion/FUENTES_DATOS.md).
 
@@ -291,7 +291,7 @@ Marco ético: [`docs/ETICA.md`](docs/ETICA.md). Limitaciones técnicas y éticas
 
 ## Licencia y créditos
 
-Código: MIT (`LICENSE`). Los datos conservan sus licencias y condiciones de origen; ver [`NOTICE`](NOTICE) y [`docs/DATOS.md`](docs/DATOS.md). La base municipal es la versión anonimizada publicada por Data Cívica. La capa de nombres de Data Cívica se carga localmente y no se empaqueta. Los registros sintéticos de demostración, si se activan, no representan personas reales.
+Código: MIT (`LICENSE`). Los datos conservan sus licencias y condiciones de origen; ver [`NOTICE`](NOTICE) y [`docs/DATOS.md`](docs/DATOS.md). La base municipal es la versión anonimizada publicada por Data Cívica. La capa de nombres de Data Cívica se incluye en la imagen pública para habilitar la búsqueda. Los registros sintéticos de demostración, si se activan, no representan personas reales.
 
 Hecho para que la prioridad de búsqueda sea **discutible**: con datos, con métricas, con incertidumbre y con límites a la vista.
 

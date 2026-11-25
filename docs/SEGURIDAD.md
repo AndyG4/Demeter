@@ -89,7 +89,7 @@ Si un atacante ya puede escribir en `dataDir`, puede introducir registros falsos
 
 El modo real no cambia el canal: sigue siendo un archivo local autorizado. No hay endpoint de subida, scraping ni conexión saliente al RNPDNO. Si el manifest declara `synthetic:false` y el CSV no existe, el servicio falla al iniciar en lugar de caer a la demostración. Antes de cargar nombres reales se requiere base legal, evaluación de impacto, minimización y protocolo de corrección/eliminación. Ver [`DATOS_REALES.md`](DATOS_REALES.md).
 
-La capa de nombres (`data/registros_nombres.csv`) es pública pero sensible: se carga localmente, no se empaqueta y sólo se consulta por nombre; no hay endpoint de listado masivo. La ubicación es estatal, no municipal. El operador debe atender solicitudes de retiro y no convertir el buscador en un directorio.
+La capa de nombres (`data/registros_nombres.csv`) es pública pero sensible: se incluye en la imagen pública para habilitar la búsqueda, sólo se consulta por nombre y no hay endpoint de listado masivo. La ubicación es estatal, no municipal. El operador debe atender solicitudes de retiro y no convertir el buscador en un directorio.
 
 ### Mapa de calles
 

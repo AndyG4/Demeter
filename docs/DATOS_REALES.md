@@ -4,7 +4,7 @@
 
 La instalación combina la **base 2025** con los **hechos nuevos de abril de 2026** publicados anonimizados por Data Cívica: **137,583 personas únicas** (133,887 de 2025 + 3,696 nuevos) y corte 2026-04-30. No tienen nombre; sí tienen sexo, edad, fecha, estatus, entidad y municipio cuando la fuente los publica. El mapa, los conteos y las fichas anónimas ya usan esos datos.
 
-La **búsqueda por nombre** usa `data/registros_nombres.csv`, la versión pública de nombres de Data Cívica. Son **78,684 registros** con nombre, edad, sexo, fecha y entidad; **no incluyen municipio**. El buscador muestra `Aproximada a la entidad`. Este archivo no se empaqueta en el jar y se puede retirar.
+La **búsqueda por nombre** usa `data/registros_nombres.csv`, la versión pública de nombres de Data Cívica. Son **78,684 registros** con nombre, edad, sexo, fecha y entidad; **no incluyen municipio**. El buscador muestra `Aproximada a la entidad`. El archivo se incluye en la imagen pública y se puede retirar.
 
 Para **nombre + municipio** se necesita un archivo autorizado. Este documento explica cómo cargarlo.
 

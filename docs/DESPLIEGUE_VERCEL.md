@@ -118,9 +118,9 @@ curl http://localhost:8080/api/v1/health
 
 ## Seguridad y datos
 
-- La imagen no incluye `data/registros_nombres.csv`; ese archivo es local y está en `.gitignore`.
-- No se debe publicar el archivo de nombres.
-- La fuente municipal de fosas no tiene licencia explícita; revisar autorización antes de un despliegue público.
+- La imagen incluye `data/registros_nombres.csv` para habilitar la búsqueda por nombre. Ese archivo se publica en el repositorio y queda descargable.
+- La capa de nombres sólo publica entidad, no municipio.
+- La fuente de nombres no tiene una licencia de reutilización explícita; revisar autorización y política de retiro antes de un despliegue público.
 - El rate limiting es por instancia, no global. En Vercel con varias instancias no equivale a un límite distribuido.
 - Revisar CSP y cabeceras al cambiar de dominio.
 - El contenedor corre como usuario no root.
