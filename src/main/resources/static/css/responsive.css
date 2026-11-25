@@ -104,6 +104,12 @@
     border-bottom: 1px solid var(--ink);
   }
 
+  .leaflet-container.leaflet-touch-drag,
+  .leaflet-container.leaflet-touch-zoom,
+  .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+    touch-action: pan-y pinch-zoom;
+  }
+
   .results {
     max-height: none;
     min-height: 0;
@@ -155,6 +161,12 @@
     height: 58vh;
     min-height: 420px;
     border-bottom: 1px solid var(--ink);
+  }
+
+  .leaflet-container.leaflet-touch-drag,
+  .leaflet-container.leaflet-touch-zoom,
+  .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+    touch-action: pan-y pinch-zoom;
   }
 
   .results {

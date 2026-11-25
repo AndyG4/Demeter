@@ -84,8 +84,38 @@ export class RastroMap {
       maxBounds: MEXICO_BOUNDS,
       maxBoundsViscosity: 0.8,
       worldCopyJump: false,
+      dragging: !window.matchMedia("(max-width: 1024px)").matches,
+      touchZoom: !window.matchMedia("(max-width: 1024px)").matches,
     });
     this.map.setView([23.6345, -102.5528], 5);
+
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+      const shell = container.closest(".map-shell") || container;
+      const touchToggle = el("button", {
+        class: "map-touch-toggle",
+        type: "button",
+        "aria-pressed": "false",
+        text: "Mover mapa",
+      });
+      touchToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const active = this.map.dragging.enabled();
+        if (active) {
+          this.map.dragging.disable();
+          this.map.touchZoom.disable();
+          shell.classList.remove("is-map-active");
+          touchToggle.textContent = "Mover mapa";
+          touchToggle.setAttribute("aria-pressed", "false");
+        } else {
+          this.map.dragging.enable();
+          this.map.touchZoom.enable();
+          shell.classList.add("is-map-active");
+          touchToggle.textContent = "Listo";
+          touchToggle.setAttribute("aria-pressed", "true");
+        }
+      });
+      container.append(touchToggle);
+    }
 
     L.control.zoom({ position: "bottomright" }).addTo(this.map);
     L.control.scale({ position: "bottomleft", imperial: false, maxWidth: 110 }).addTo(this.map);

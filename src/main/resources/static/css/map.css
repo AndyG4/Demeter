@@ -440,3 +440,34 @@
   text-transform: uppercase;
   color: var(--muted);
 }
+
+.map-touch-toggle {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .map-touch-toggle {
+    display: inline-flex;
+    position: absolute;
+    top: 64px;
+    left: 16px;
+    z-index: 640;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+    color: var(--ink);
+    padding: 7px 10px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    touch-action: manipulation;
+    white-space: nowrap;
+  }
+
+  .map-shell.is-map-active .leaflet-container.leaflet-touch-drag,
+  .map-shell.is-map-active .leaflet-container.leaflet-touch-zoom,
+  .map-shell.is-map-active .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+    touch-action: none;
+  }
+}
